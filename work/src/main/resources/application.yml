@@ -1,0 +1,35 @@
+server:
+  #  port: 80
+  port: 8085
+  servlet:
+    context-path: /work
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.103.139.71/liu?serverTimezone=UTC&characterEncoding=UTF-8
+    #    url: jdbc:mysql://www.smdnk.cn:3306/liu?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  mvc:
+    static-path-pattern: /**
+
+  freemarker:
+    template-loader-path: [classpath:/pages/,classpath:/static/]
+    #    template-loader-path: classpath:/**
+    content-type: text/html
+    suffix: .ftl
+    cache: true  #??????
+    charset: utf-8
+    check-template-location: true
+    expose-session-attributes: true
+    expose-request-attributes: true
+    request-context-attribute: request
+
+
+mybatis:
+  type-aliases-package: com.liu.entity
+  mapper-locations: classpath:mapper/*.xml  #配置MyBatis的mapper xml配置文件路径
+  configuration:
+    map-underscore-to-camel-case: true  #开启驼峰命名匹配映射
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #开启log4j
