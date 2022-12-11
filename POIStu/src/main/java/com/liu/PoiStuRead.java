@@ -1,7 +1,6 @@
 package com.liu;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -89,7 +88,7 @@ public class PoiStuRead {
 
     public static String cellType(Cell cell) {
         String value = "";
-        int cellType = cell.getCellType();
+/*        int cellType = cell.getCellType();
         switch (cellType) {
             case HSSFCell.CELL_TYPE_BLANK: { // 空数据
                 value = "";
@@ -118,7 +117,7 @@ public class PoiStuRead {
                 }
                 break;
             }
-        }
+        }*/
         return value;
     }
 }
