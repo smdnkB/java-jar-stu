@@ -8,6 +8,7 @@ import org.apache.poi.util.Units;
 import org.apache.poi.xddf.usermodel.chart.*;
 import org.apache.poi.xwpf.usermodel.XWPFChart;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.xmlbeans.XmlException;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -131,7 +132,7 @@ public class WordUtils {
         document.close();
     }
 
-    public void createPieChart() throws IOException, InvalidFormatException  {
+    public void createPieChart() throws IOException, InvalidFormatException, XmlException {
         // 1、创建word文档对象
         XWPFDocument document = new XWPFDocument();
 

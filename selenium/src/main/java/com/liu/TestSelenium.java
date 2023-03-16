@@ -18,7 +18,9 @@ import java.util.stream.Collectors;
 public class TestSelenium {
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\18086\\Desktop\\chromedriver_win32\\chromedriver.exe");
+        String path = Objects.requireNonNull(TestSelenium.class.getClassLoader().getResource("")).getPath();
+        path = path.substring(1);
+        System.setProperty("webdriver.chrome.driver",path+"/chrome/"+"chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         			//设置执行命令
         options.addArguments("--no-sandbox");

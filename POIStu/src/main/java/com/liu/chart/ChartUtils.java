@@ -2,12 +2,19 @@ package com.liu.chart;
 
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellReference;
+import org.apache.poi.xddf.usermodel.XDDFShapeProperties;
+import org.apache.poi.xddf.usermodel.XDDFSolidFillProperties;
 import org.apache.poi.xddf.usermodel.chart.*;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openxmlformats.schemas.drawingml.x2006.chart.CTHoleSize;
-import org.openxmlformats.schemas.drawingml.x2006.chart.CTPlotArea;
+import org.apache.xmlbeans.SchemaType;
+import org.apache.xmlbeans.XmlException;
+import org.apache.xmlbeans.impl.schema.SchemaTypeImpl;
+import org.openxmlformats.schemas.drawingml.x2006.chart.*;
+import org.openxmlformats.schemas.drawingml.x2006.chart.impl.CTSerTxImpl;
+import org.openxmlformats.schemas.drawingml.x2006.main.impl.CTSolidColorFillPropertiesImpl;
+import org.openxmlformats.schemas.drawingml.x2006.main.impl.CTTextBodyPropertiesImpl;
 
 import java.util.*;
 
@@ -69,7 +76,7 @@ public class ChartUtils {
      * 绘制条形图 (柱状图)
      * @param chart 要绘制的chart对象
      */
-    public static void createBarChart(XDDFChart chart, ChartConf conf){
+    public static void createBarChart(XDDFChart chart, ChartConf conf) throws XmlException {
         XSSFWorkbook workbook = conf.getWorkbook();
         XSSFSheet sheet = workbook.getSheetAt(0);
         ArrayList<String> seriesName = conf.getSeriesName();
@@ -106,21 +113,41 @@ public class ChartUtils {
             XDDFBarChartData.Series lineSeries = (XDDFBarChartData.Series) barChart.addSeries(xAxisSource, yAxisSourceList.get(i));
             lineSeries.setTitle(seriesName.get(i), new CellReference(sheet.getRow(i+1).getCell(0)));
 //            lineSeries.setTitle(seriesName.get(i), null); // 图例标题
+
+            lineSeries.setTitle(seriesName.get(i), new CellReference(sheet.getRow(i+1).getCell(0)));
+            CTDLbls dLbls = chart.getCTChart().getPlotArea().getBarChartArray(0).getSerArray(i).addNewDLbls();
+//            lineSeries.setShapeProperties(new XDDFShapeProperties());
+            setChart(dLbls,conf);
         }
 
         // 这一句是y轴的一个操作，也没懂什么意思，但是没有这个，画的图表会超出画布范围
         yAxis.setCrossBetween(AxisCrossBetween.BETWEEN);
         // 柱状图的类型，不是有什么堆积。。。的
-        barChart.setBarGrouping(BarGrouping.CLUSTERED); // STANDARD 正常图 // STACKED 堆积图
+        barChart.setBarGrouping(BarGrouping.STACKED); // STANDARD 正常图 // STACKED 堆积图
         // 柱状图的方向
         barChart.setBarDirection(BarDirection.BAR); // COL 柱状图 BAR 横向条形图
         // 是否设置不同的颜色 false就行
         barChart.setVaryColors(false);
 
+        CTOverlap ctOverlap = CTOverlap.Factory.parse("<xml-fragment val='100'/>");
+        chart.getCTChart().getPlotArea().getBarChartArray(0).setOverlap(ctOverlap);
+
         // 9、绘制柱状图
         chart.plot(barChart);
+
+
     }
 
+
+    public static void setChart(CTDLbls dLbls, ChartConf conf){
+        dLbls.addNewShowVal().setVal(true); //图上面 显示数据
+        dLbls.addNewShowLegendKey().setVal(false);
+        dLbls.addNewShowCatName().setVal(false);//图上面  类别名称
+        dLbls.addNewShowSerName().setVal(false);
+        dLbls.addNewShowPercent().setVal(false);//图上面  显示百分比
+        dLbls.addNewShowLeaderLines().setVal(false);// 引导线
+        dLbls.setSeparator("\n");// 分隔符为分行符
+    }
 
     /**
      * 饼图

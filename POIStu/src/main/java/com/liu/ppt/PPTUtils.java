@@ -32,6 +32,7 @@ import org.apache.poi.xslf.usermodel.XSLFTextShape;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.XmlException;
 import org.openxmlformats.schemas.drawingml.x2006.chart.CTDLbls;
 
 import java.awt.*;
@@ -93,6 +94,15 @@ public class PPTUtils {
         XMLSlideShow pptx = new XMLSlideShow();
         XSLFSlide slide1 = pptx.createSlide();
 
+
+        XSLFChart chart = pptx.createChart();
+
+        slide1.addChart(chart);
+    }
+
+    public void readPPTX( FileInputStream fileInputStream) throws IOException {
+        XMLSlideShow pptx = new XMLSlideShow(fileInputStream);
+        XSLFSlide slide1 = pptx.createSlide();
 
         XSLFChart chart = pptx.createChart();
 
@@ -200,7 +210,7 @@ public class PPTUtils {
      *
      * @throws IOException
      */
-    public void createChart() throws IOException {
+    public void createChart() throws IOException, XmlException {
 
         XMLSlideShow pptx = new XMLSlideShow();
         XSLFChart barChart = pptx.createChart();
@@ -212,7 +222,7 @@ public class PPTUtils {
 
         Map<String,Integer[]> series = new LinkedHashMap<>();
         series.put("SMS",new Integer[]{900,800,600,700,400});
-//        series.put("LUD",new Integer[]{1000,200,400,300,800});
+        series.put("LUD",new Integer[]{1000,200,400,300,800});
         ChartConf chartConf = new ChartConf(new String[]{"12/1", "12/2", "12/3", "12/4", "12/5"}, series);
         ChartUtils.createBarChart(barChart,chartConf);
         ChartUtils.createLineChart(lineChart,chartConf);
