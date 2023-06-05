@@ -14,7 +14,7 @@ public class ProxyPoint {
         this.sellTickets =sellTickets;
     }
 
-    public void sell(){
+    public void invoke(){
         System.out.println("代理增强");
         sellTickets.sell();
     }
