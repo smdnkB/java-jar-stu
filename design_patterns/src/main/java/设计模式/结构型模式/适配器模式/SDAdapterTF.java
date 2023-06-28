@@ -2,6 +2,8 @@ package 设计模式.结构型模式.适配器模式;
 
 import 设计模式.结构型模式.适配器模式.sd.SDCard;
 
+import java.util.concurrent.BlockingQueue;
+
 /**
  * @author: liu long fei
  * @description: SD 卡适配TF 卡
@@ -13,6 +15,7 @@ public class SDAdapterTF implements SDCard {
 
     @Override
     public void read() {
+
 
     }
 
