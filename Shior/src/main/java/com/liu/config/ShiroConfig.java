@@ -1,5 +1,6 @@
 package com.liu.config;
 
+import com.liu.fillter.MyRolesAuthorizationFilter;
 import com.liu.shiroRealm.AuthRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.realm.Realm;
@@ -12,15 +13,19 @@ import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
 public class ShiroConfig {
 
-
-
-    //
+    // 配置自定义过滤器
+    private  Map<String, Filter> SYSFilter (){
+        HashMap<String, Filter> filterMap = new HashMap<>();
+        filterMap.put("my-role",new MyRolesAuthorizationFilter());
+        return filterMap;
+    }
 
     // shiro过滤器
     @Bean("shiroFilterFactoryBean")
@@ -29,6 +34,8 @@ public class ShiroConfig {
 
         // 给过滤器设置安全管理器
         shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);
+        // 添加自定义过滤器
+        shiroFilterFactoryBean.setFilters(SYSFilter());
 
         // 配置公共资源
         Map<String,String> map = new HashMap<>();
@@ -57,22 +64,7 @@ public class ShiroConfig {
     // 自定义realm
     @Bean("realm")
     public Realm getRealm(){
-        AuthRealm authRealm = new AuthRealm();
-        // 修改密码验证匹配器
-//        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
-//        matcher.setHashAlgorithmName("MD5");
-//        matcher.setHashIterations(1024);
-//        authRealm.setCredentialsMatcher(matcher);
-
-        // 开启缓存管理(本地缓存)
-//        authRealm.setCacheManager(new EhCacheManager());
-        authRealm.setCachingEnabled(true);
-        authRealm.setAuthenticationCachingEnabled(true);// 认证缓存
-        authRealm.setAuthorizationCachingEnabled(true); // 授权缓存
-        authRealm.setAuthenticationCacheName("Authen");
-        authRealm.setAuthorizationCacheName("Author");
-
-        return authRealm;
+        return new AuthRealm();
     }
 
     // 会话管理器
