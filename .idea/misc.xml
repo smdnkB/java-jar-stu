@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/AI/pom.xml" />
+        <option value="$PROJECT_DIR$/DDD/pom.xml" />
+        <option value="$PROJECT_DIR$/Test/pom.xml" />
+        <option value="$PROJECT_DIR$/work/pom.xml" />
+        <option value="$PROJECT_DIR$/kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/redis/pom.xml" />
+        <option value="$PROJECT_DIR$/Shior/pom.xml" />
+        <option value="$PROJECT_DIR$/POIStu/pom.xml" />
+        <option value="$PROJECT_DIR$/socket/pom.xml" />
+        <option value="$PROJECT_DIR$/thread/pom.xml" />
+        <option value="$PROJECT_DIR$/Mockito/pom.xml" />
+        <option value="$PROJECT_DIR$/Swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/HtmlUnit/pom.xml" />
+        <option value="$PROJECT_DIR$/RabbitMq/pom.xml" />
+        <option value="$PROJECT_DIR$/selenium/pom.xml" />
+        <option value="$PROJECT_DIR$/JUSTUtils/pom.xml" />
+        <option value="$PROJECT_DIR$/TaskThred/pom.xml" />
+        <option value="$PROJECT_DIR$/DesignMode/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/myBatis-plus/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/design_patterns/pom.xml" />
+        <option value="$PROJECT_DIR$/minio/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
