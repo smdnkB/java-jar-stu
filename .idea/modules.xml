@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AI/AI.iml" filepath="$PROJECT_DIR$/AI/AI.iml" />
       <module fileurl="file://$PROJECT_DIR$/DDD/DDD.iml" filepath="$PROJECT_DIR$/DDD/DDD.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DesignMode/DesignMode.iml" filepath="$PROJECT_DIR$/DesignMode/DesignMode.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HtmlUnit/HtmlUnit.iml" filepath="$PROJECT_DIR$/HtmlUnit/HtmlUnit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JUSTUtils/JUSTUtils.iml" filepath="$PROJECT_DIR$/JUSTUtils/JUSTUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mockito/Mockito.iml" filepath="$PROJECT_DIR$/Mockito/Mockito.iml" />
-      <module fileurl="file://$PROJECT_DIR$/POIStu/POIStu.iml" filepath="$PROJECT_DIR$/POIStu/POIStu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RabbitMq/RabbitMq.iml" filepath="$PROJECT_DIR$/RabbitMq/RabbitMq.iml" />
       <module fileurl="file://$PROJECT_DIR$/Shior/Shior.iml" filepath="$PROJECT_DIR$/Shior/Shior.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBoot.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/Swagger/Swagger.iml" filepath="$PROJECT_DIR$/Swagger/Swagger.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TaskThred/TaskThred.iml" filepath="$PROJECT_DIR$/TaskThred/TaskThred.iml" />
-      <module fileurl="file://$PROJECT_DIR$/design_patterns/design_patterns.iml" filepath="$PROJECT_DIR$/design_patterns/design_patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/elasticsearch/elasticsearch.iml" filepath="$PROJECT_DIR$/elasticsearch/elasticsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-jar-stu.iml" filepath="$PROJECT_DIR$/.idea/java-jar-stu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kafka/kafka.iml" filepath="$PROJECT_DIR$/kafka/kafka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/minio/minio.iml" filepath="$PROJECT_DIR$/minio/minio.iml" />
       <module fileurl="file://$PROJECT_DIR$/myBatis-plus/myBatis-plus.iml" filepath="$PROJECT_DIR$/myBatis-plus/myBatis-plus.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/selenium/selenium.iml" filepath="$PROJECT_DIR$/selenium/selenium.iml" />
       <module fileurl="file://$PROJECT_DIR$/socket/socket.iml" filepath="$PROJECT_DIR$/socket/socket.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test/test.iml" filepath="$PROJECT_DIR$/Test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/work/work.iml" filepath="$PROJECT_DIR$/work/work.iml" />
     </modules>
   </component>

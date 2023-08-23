@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1024" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -32,31 +33,6 @@
         <module name="socket" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="AI" target="11" />
-      <module name="DDD" target="11" />
-      <module name="design_patterns" target="11" />
-      <module name="DesignMode" target="11" />
-      <module name="elasticsearch" target="11" />
-      <module name="HtmlUnit" target="11" />
-      <module name="JUSTUtils" target="11" />
-      <module name="kafka" target="11" />
-      <module name="minio" target="11" />
-      <module name="Mockito" target="11" />
-      <module name="myBatis-plus" target="11" />
-      <module name="POIStu" target="11" />
-      <module name="RabbitMq" target="11" />
-      <module name="redis" target="11" />
-      <module name="selenium" target="11" />
-      <module name="Shior" target="11" />
-      <module name="socket" target="11" />
-      <module name="SpringBoot" target="11" />
-      <module name="Swagger" target="11" />
-      <module name="TaskThred" target="11" />
-      <module name="test" target="11" />
-      <module name="thread" target="11" />
-      <module name="work" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
